@@ -1,0 +1,46 @@
+version: "3.6"
+
+services:
+  ojs:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    depends_on:
+      - mysql
+    restart: unless-stopped
+    # for shooting trouble
+    #entrypoint: "tail -f /dev/null"
+    volumes:
+      - ./docker/ojs/php.ini:/usr/local/etc/php/conf.d/custom.ini
+      - ./docker/ojs/log:/var/www/html/log
+      - ./:/var/www/html
+
+  mysql:
+    # TODO: set up user account
+    image: mysql/mysql-server:5.7
+    environment:
+      MYSQL_USER: mysql
+      MYSQL_PASSWORD: mysql
+      MYSQL_DATABASE: mysql
+    volumes:
+      - ./data/mysql:/var/lib/mysql
+      - ./docker/mysql/logs/db:/var/log/mysql
+      - ./docker/mysql/config/db.charset.conf:/etc/mysql/conf.d/charset.cnf
+    restart: unless-stopped
+
+  nginx:
+    image: nginx:alpine
+    restart: unless-stopped
+    depends_on:
+      - ojs
+    ports:
+      - "8080:80"
+      - "8081:443"
+    volumes:
+      - ./:/var/www/html
+      - ./docker/nginx:/etc/nginx/conf.d
+      # Need to map assets to public dir
+
+volumes:
+  mysql-data:
+    driver: local
