@@ -1,4 +1,5 @@
 .DS_Store
+.idea
 *_crossref.xml
 config.inc.php
 config.inc.php.*
@@ -12,3 +13,14 @@ files
 ojs_db_connect.php
 eschol/utilities/reports/*.csv
 *.swp
+
+# Container data
+data/
+!data/mysql/.gitkeep
+docker/mysql/logs/*
+!docker/mysql/logs/.gitkeep
+docker/ojs/log/*
+!docker/ojs/log/.gitkeep
+
+# A place for things
+ignore
