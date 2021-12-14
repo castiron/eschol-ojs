@@ -3,6 +3,7 @@
 *_crossref.xml
 config.inc.php
 config.inc.php.*
+.env
 build
 temp
 files
