@@ -1,6 +1,6 @@
 [submodule "lib/pkp"]
 	path = lib/pkp
-	url = git@github.com:cdlib/eschol-pkp-lib.git
+	url = https://github.com/cdlib/eschol-pkp-lib.git
 [submodule "plugins/importexport/cdlExport"]
 	path = plugins/importexport/cdlExport
 	url = git@github.com:castiron/cdl-ojs-export.git
