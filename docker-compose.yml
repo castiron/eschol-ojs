@@ -16,9 +16,10 @@ services:
       - ./:/var/www/html
       - "${OJS_PUBLIC_DIRECTORY:-./public}:/var/www/html/public"
       - "${OJS_FILES_DIRECTORY:-./files}:/var/www/html/files"
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
 
   mysql:
-    # TODO: set up user account
     image: mysql/mysql-server:5.7
     environment:
       MYSQL_USER: mysql
