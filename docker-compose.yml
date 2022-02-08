@@ -30,6 +30,9 @@ services:
       - ./docker/mysql/logs/db:/var/log/mysql
       - ./docker/mysql/config/db.charset.conf:/etc/mysql/conf.d/charset.cnf
     restart: unless-stopped
+    ports:
+      # For external access / debugging
+      - "33061:3306"
 
   nginx:
     image: nginx:alpine

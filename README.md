@@ -16,3 +16,9 @@
 
 There's a redirect loop unless you use this URL:
 `http://localhost:8080/index.php/index/login?subi=no`
+
+
+# Notes for Setting Up a New Environment
+
+1. Make sure the cdlexport plugin is registered in the `versions` table, with `lazy_load` set to 0
+2. Add settings for section to the config file for HTTP requests to cdlexport endpoints (see `config.inc.php.sample`)

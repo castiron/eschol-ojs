@@ -3,7 +3,7 @@
 /**
  * @defgroup plugins_generic_openAds
  */
- 
+
 /**
  * @file plugins/generic/openAds/index.php
  *

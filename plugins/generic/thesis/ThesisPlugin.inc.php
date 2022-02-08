@@ -14,7 +14,6 @@
 
 // $Id$
 
-
 import('lib.pkp.classes.plugins.GenericPlugin');
 
 class ThesisPlugin extends GenericPlugin {
