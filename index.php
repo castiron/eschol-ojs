@@ -62,7 +62,7 @@ require('./lib/pkp/includes/bootstrap.inc.php');
 
 // For when OJS is behind a proxy
 // TODO: do this the right way, with a Request::getProtocol hook
-if($_SERVER['HTTP_X_FORWARDED_PROTO'] == 'https') $_SERVER['HTTPS'] = 'on';
+if(@$_SERVER['HTTP_X_FORWARDED_PROTO'] == 'https') $_SERVER['HTTPS'] = 'on';
 
 // Serve the request
 $application =& PKPApplication::getApplication();
