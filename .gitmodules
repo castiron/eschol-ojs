@@ -4,3 +4,6 @@
 [submodule "plugins/generic/cdlExport"]
 	path = plugins/generic/journalTransporter
 	url = git@github.com:castiron/cdl-ojs-export.git
+[submodule "plugins/importexport/cdlImport"]
+	path = plugins/importexport/cdlImport
+	url = git@github.com:castiron/cdl-import-ojs-plugin.git
